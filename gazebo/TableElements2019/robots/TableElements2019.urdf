@@ -1,0 +1,226 @@
+<?xml version="1.0" ?>
+<robot
+  name="TableElements2019">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="1.5 0.051936 0.9229"
+        rpy="0 0 0" />
+      <mass
+        value="186.13" />
+      <inertia
+        ixx="91.89"
+        ixy="2.1768E-09"
+        ixz="-3.2607E-09"
+        iyy="226.8"
+        iyz="5.2481"
+        izz="141.15" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TableElements2019/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.62745 0.62745 0.62745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TableElements2019/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="y">
+    <inertial>
+      <origin
+        xyz="-1.6818 0.57934 -1.11"
+        rpy="0 0 0" />
+      <mass
+        value="2.8649" />
+      <inertia
+        ixx="2.5069"
+        ixy="0.63877"
+        ixz="-1.1259"
+        iyy="3.2034"
+        iyz="0.81008"
+        izz="1.9823" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TableElements2019/meshes/y.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.96863 0.7098 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TableElements2019/meshes/y.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jy"
+    type="fixed">
+    <origin
+      xyz="-0.083 -1.939 0.044"
+      rpy="1.5708 -6.123E-17 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="y" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="p">
+    <inertial>
+      <origin
+        xyz="1.7677 0.019009 -0.11463"
+        rpy="0 0 0" />
+      <mass
+        value="5.0623" />
+      <inertia
+        ixx="1.5264"
+        ixy="-0.064328"
+        ixz="1.3488"
+        iyy="10.068"
+        iyz="0.040976"
+        izz="8.5464" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TableElements2019/meshes/p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.51765 0.29804 0.5098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TableElements2019/meshes/p.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp"
+    type="fixed">
+    <origin
+      xyz="0 0.022 0.092"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="p" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="w">
+    <inertial>
+      <origin
+        xyz="-0.08975 0.072053 0.45"
+        rpy="0 0 0" />
+      <mass
+        value="6.1074" />
+      <inertia
+        ixx="3.6521"
+        ixy="0.022513"
+        ixz="-3.0281E-13"
+        iyy="3.7991"
+        iyz="-7.0392E-14"
+        izz="0.18358" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TableElements2019/meshes/w.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7098 0.6902 0.63137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TableElements2019/meshes/w.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jw"
+    type="fixed">
+    <origin
+      xyz="1.05 -1.565 0.022"
+      rpy="1.5708 6.123E-17 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="w" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+
+  <material name="g">
+      <color rgba="180 180 200 1.0"/>
+  </material>
+
+  <gazebo reference="base_link">
+      <material name="g"/>
+  </gazebo>
+
+  <gazebo reference="y">
+      <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <gazebo reference="p">
+      <material>Gazebo/Purple</material>
+  </gazebo>
+
+  <gazebo reference="w">
+      <material>Gazebo/White</material>
+  </gazebo>
+
+</robot>

@@ -1,0 +1,43 @@
+<robot
+  name="eurobot2019">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="1.5 -0.97131 0.064683"
+        rpy="0 0 0" />
+      <mass
+        value="217.15" />
+      <inertia
+        ixx="117.72"
+        ixy="0.001115"
+        ixz="8.0681E-05"
+        iyy="162.37"
+        iyz="-6.3727"
+        izz="270.51" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot2019/meshes/base_linkSTL.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot2019/meshes/base_linkSTL.dae" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

@@ -1,0 +1,45 @@
+<robot
+  name="eurobot2019_t">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="1.5 0.064683 0.97131"
+        rpy="0 0 0" />
+      <mass
+        value="217.15" />
+      <inertia
+        ixx="117.72"
+        ixy="8.0681E-05"
+        ixz="-0.001115"
+        iyy="270.51"
+        iyz="6.3727"
+        izz="162.37" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot2019_t/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+        <texture
+          filename="package://eurobot2019_t/textures/duck.png" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot2019_t/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

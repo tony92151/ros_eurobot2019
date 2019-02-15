@@ -1,0 +1,98 @@
+<robot
+  name="eurobot2019_base">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="1.5 -1 0.0111"
+        rpy="0 0 0" />
+      <mass
+        value="133.2" />
+      <inertia
+        ixx="44.405"
+        ixy="-4.4567E-15"
+        ixz="1.0747E-16"
+        iyy="99.905"
+        iyz="2.7263E-15"
+        izz="144.3" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot2019_base/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="base">
+        <color
+          rgba="0.62745 0.62745 0.62745 1" />
+        <texture
+          filename="package://eurobot2019_base/textures/CDR2019-Aire_de_jeu-v1.01-FINAL-export-plateau-1.png" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot2019_base/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Empty_Link">
+    <inertial>
+      <origin
+        xyz="-1.0132 0.1057 1.583"
+        rpy="0 0 0" />
+      <mass
+        value="83.952" />
+      <inertia
+        ixx="61.471"
+        ixy="5.8431"
+        ixz="0.0010631"
+        iyy="125.92"
+        iyz="1.6409E-05"
+        izz="72.04" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot2019_base/meshes/Empty_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot2019_base/meshes/Empty_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Empty_joint"
+    type="fixed">
+    <origin
+      xyz="3.08300000000066 -1.93899999999889 0.0439999999999997"
+      rpy="1.5707963267949 -6.12303176911189E-17 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="Empty_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

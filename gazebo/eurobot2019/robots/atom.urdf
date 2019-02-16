@@ -1,0 +1,38 @@
+<robot
+  name="atom1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.17" />
+      <inertia
+        ixx="0.005"
+        ixy="0"
+        ixz="0"
+        iyy="0.005"
+        iyz="0"
+        izz="0.005" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot2019/meshes/atom1.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot2019/meshes/atom1.dae" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

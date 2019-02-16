@@ -22,7 +22,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://eurobot2019/meshes/base.dae" />
+          filename="package://eurobot2019/meshes/base_link1.dae" />
       </geometry>
       <material
         name="">
@@ -36,7 +36,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://eurobot2019/meshes/base.dae" />
+          filename="package://eurobot2019/meshes/base_link1.dae" />
       </geometry>
     </collision>
   </link>

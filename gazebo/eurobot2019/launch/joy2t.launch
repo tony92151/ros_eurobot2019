@@ -1,0 +1,21 @@
+<launch>
+ 
+  <param name="joy_node/dev" value="/dev/input/js0" />
+
+  <node pkg="joy" name="joy" type="joy_node"/>
+
+  <param name="axisX_linear" value="1" type="int"/>
+  <param name="axisY_linear" value="0" type="int"/>
+  <param name="axis_angular" value="3" type="int"/>
+  <param name="scale_linear" value="0.5" type="double"/>
+  <param name="scale_angular" value="-0.8" type="double"/> 
+  <param name="cmd_vel" value="dog/cmd_vel" type="string"/>
+
+  <node pkg="joy" name="teleop" type="teleop_joy">
+    <remap from="car/cmd_vel" to="dog/cmd_vel"/>
+  </node>
+
+  
+
+</launch>
+

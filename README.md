@@ -1,6 +1,6 @@
 eurobot2019
 
-<img src="https://github.com/tony92151/eurobot2019/blob/master/image/gazebo.jpg"/>
+<img src="https://github.com/tony92151/ros_eurobot2019/blob/master/image/gazebo2.png"/>
 
 convert stl to dae
 

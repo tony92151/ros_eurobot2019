@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+
+  <model name="eurobot2019">
+  <link name="base_link">
+    <inertial>
+        <pose>1.5 -0.97131 0.064683 0 0 0</pose>
+        <mass>500</mass>
+        <inertia>
+          <ixx>117</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>162</iyy>
+          <iyz>0</iyz>
+          <izz>270</izz>
+        </inertia>
+      </inertial>    
+
+    <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://eurobot2019_field/meshes/base_link1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+    <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://eurobot2019_field/meshes/base_link1.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+  </link>
+  </model>
+</sdf>

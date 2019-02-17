@@ -5,9 +5,16 @@
     pkg="tf"
     type="static_transform_publisher"
     args="0 0 0 0 0 0 base_link base_footprint 40" />
+
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find eurobot2019)/worlds/eurobot2019_field_done3.world"/>
+    <arg name="world_name" value="$(find eurobot2019)/worlds/eurobot2019_field_done.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
   </include>
+
 
   <node
     name="fake_joint_calibration"

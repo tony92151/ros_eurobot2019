@@ -22,7 +22,7 @@ http://www.eurobot.org/eurobot/eurobot-2019
 
 and compile
 
-## Starup setting
+## Launch field
 
 launch field without atoms
 

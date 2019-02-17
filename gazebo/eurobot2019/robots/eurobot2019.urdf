@@ -40,4 +40,10 @@
       </geometry>
     </collision>
   </link>
+
+  <link name="world"/>
+  <joint name="world_fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
 </robot>

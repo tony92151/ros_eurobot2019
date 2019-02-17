@@ -2,8 +2,7 @@ eurobot2019
 
 <img src="https://github.com/tony92151/ros_eurobot2019/blob/master/image/gazebo3.jpg"/>
 
-<img src="https://github.com/tony92151/ros_eurobot2019/blob/master/image/gazebo.gif"/>
+<img src="https://github.com/tony92151/ros_eurobot2019/blob/master/image/gazebo2.gif"/>
 
-convert stl to dae
 
-> https://www.meshconvert.com/
+> roslaunch eurobot2019 gazebo_field_only.launch

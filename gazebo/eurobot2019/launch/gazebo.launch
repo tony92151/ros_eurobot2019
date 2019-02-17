@@ -10,7 +10,7 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(find eurobot2019)/robots/eurobot2019.urdf -urdf -model eurobot2019"
+    args="-file $(find eurobot2019)/robots/eurobot2019_fixed.urdf -urdf -model eurobot2019"
     output="screen" />
   <node
     name="fake_joint_calibration"

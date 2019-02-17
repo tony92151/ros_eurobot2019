@@ -1,0 +1,1902 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='eurobot2019'>
+      <link name='base_link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>1.5 -0.97131 0.064683 0 -0 0</pose>
+          <mass>217.15</mass>
+          <inertia>
+            <ixx>117.72</ixx>
+            <ixy>0.001115</ixy>
+            <ixz>8.0681e-05</ixz>
+            <iyy>162.37</iyy>
+            <iyz>-6.3727</iyz>
+            <izz>270.51</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/parallels/catkin_ws/src/ros_eurobot2019/gazebo/eurobot2019/meshes/base_link1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/parallels/catkin_ws/src/ros_eurobot2019/gazebo/eurobot2019/meshes/base_link1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='world_fixed' type='revolute'>
+        <child>base_link</child>
+        <parent>world</parent>
+        <axis>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+          <xyz>0 0 1</xyz>
+        </axis>
+      </joint>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+    </model>
+    <light name='user_point_light_0' type='point'>
+      <pose frame=''>1.47415 -0.781974 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+    <light name='user_directional_light_0' type='directional'>
+      <pose frame=''>0.430567 1.39142 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+    <model name='atom1'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.993163 -1.14357 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_0'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.08465 -1.04538 0 0 -0 0</pose>
+    </model>
+    <model name='atom2'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.12</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.901946 -1.03496 0 0 -0 0</pose>
+    </model>
+    <model name='atom3'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.17</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.995821 -0.949228 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_1'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.9975 -1.1364 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_2'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.93576 -0.971811 0 0 -0 0</pose>
+    </model>
+    <model name='atom2_0'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.12</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.92701 -1.06111 0 0 -0 0</pose>
+    </model>
+    <model name='atom3_0'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.17</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.05107 -1.04307 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_3'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.48278 -0.467265 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_4'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.48841 -0.761276 0 0 -0 0</pose>
+    </model>
+    <model name='atom2_1'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.12</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.48433 -1.06258 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_5'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.501356 -0.464082 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_6'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.51163 -0.776045 0 0 -0 0</pose>
+    </model>
+    <model name='atom2_2'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.12</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.512749 -1.07106 0 0 -0 0</pose>
+    </model>
+    <model name='atom3_1'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.17</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.25689 -0.208538 0 0 -0 0</pose>
+    </model>
+    <model name='atom3_2'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.17</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.66316 -0.197232 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_7'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.49447 -1.44712 0 0 -0 0</pose>
+    </model>
+    <model name='atom2_3'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.12</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.38408 -1.44433 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_8'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.28293 -1.43937 0 0 -0 0</pose>
+    </model>
+    <model name='atom3_3'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.17</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.19166 -1.44017 0 0 -0 0</pose>
+    </model>
+    <model name='atom2_4'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.12</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.00294 -1.4178 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_9'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.09085 -1.44591 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_10'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.497386 -1.44088 0 0 -0 0</pose>
+    </model>
+    <model name='atom2_5'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.12</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.601767 -1.45045 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_11'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.701563 -1.45692 0 0 -0 0</pose>
+    </model>
+    <model name='atom3_4'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.17</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom3/meshes/atom3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.807034 -1.45219 0 0 -0 0</pose>
+    </model>
+    <model name='atom1_12'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.06</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom1/meshes/atom1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.916203 -1.44691 0 0 -0 0</pose>
+    </model>
+    <model name='atom2_6'>
+      <link name='link'>
+        <pose frame=''>0 0 0.0125 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.0125 0 -0 0</pose>
+          <mass>0.12</mass>
+          <inertia>
+            <ixx>0.0005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://atom2/meshes/atom2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.02183 -1.45397 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>193 293000000</sim_time>
+      <real_time>373 996441844</real_time>
+      <wall_time>1550386785 706288686</wall_time>
+      <iterations>193293</iterations>
+      <model name='atom1'>
+        <pose frame=''>0.996863 -1.14326 0.01 1e-06 2e-06 -0.000594</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.996863 -1.14326 0.0225 1e-06 2e-06 -0.000594</pose>
+          <velocity>1e-06 0 5e-06 -0.000657 0.00198 0</velocity>
+          <acceleration>0.025436 0.008397 0.005173 2.48493 1.1614 -3.14133</acceleration>
+          <wrench>0.001526 0.000504 0.00031 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_0'>
+        <pose frame=''>1.09812 -1.03946 0.01 -5e-06 1.9e-05 0.001751</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.09812 -1.03946 0.0225 -5e-06 1.9e-05 0.001751</pose>
+          <velocity>1e-06 0 -0.000554 -0.00964 0.023276 1e-06</velocity>
+          <acceleration>0.29159 0.120725 -0.554079 -0.21477 -1.28451 -3.14119</acceleration>
+          <wrench>0.017495 0.007244 -0.033245 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_1'>
+        <pose frame=''>1.99692 -1.1361 0.01 7e-06 -4e-06 -0.001459</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.99692 -1.1361 0.0225 7e-06 -4e-06 -0.001459</pose>
+          <velocity>1e-06 1e-06 0.000189 -0.000489 0.00642 0</velocity>
+          <acceleration>0.080929 0.006625 0.188893 -0.489429 0.136631 0.000195</acceleration>
+          <wrench>0.004856 0.000397 0.011334 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_10'>
+        <pose frame=''>0.499969 -1.5823 0.150901 -1.57082 0.127733 -0.000145</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.499971 -1.5698 0.1509 -1.57082 0.127733 -0.000145</pose>
+          <velocity>0.000603 4e-05 8.1e-05 -0.001019 0.015131 0.00035</velocity>
+          <acceleration>0.598177 0.040169 0.068282 -1.01087 0.256101 0.068384</acceleration>
+          <wrench>0.035891 0.00241 0.004097 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_11'>
+        <pose frame=''>0.700148 -1.58197 0.150897 -1.57082 -0.117908 -0.000138</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.70015 -1.56947 0.150897 -1.57082 -0.117908 -0.000138</pose>
+          <velocity>0.000656 2.9e-05 -3.9e-05 -0.000745 0.017131 0.000195</velocity>
+          <acceleration>0.653547 0.02922 -0.048534 2.40576 -0.831991 -3.10437</acceleration>
+          <wrench>0.039213 0.001753 -0.002912 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_12'>
+        <pose frame=''>0.90012 -1.58405 0.150898 -1.5708 -0.12089 -6e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.90012 -1.57155 0.150898 -1.5708 -0.12089 -6e-06</pose>
+          <velocity>0.000641 6.8e-05 -3.7e-05 -0.001781 0.016783 0.000242</velocity>
+          <acceleration>0.638087 0.068482 -0.059257 1.36112 0.90808 -3.09315</acceleration>
+          <wrench>0.038285 0.004109 -0.003555 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_2'>
+        <pose frame=''>1.93516 -0.971489 0.01 2e-06 -2e-06 0.001151</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.93516 -0.971489 0.0225 2e-06 -2e-06 0.001151</pose>
+          <velocity>1e-06 0 3.5e-05 -1.7e-05 0.000469 0</velocity>
+          <acceleration>0.006494 0.000706 0.034521 -0.017453 0.469234 0.000333</acceleration>
+          <wrench>0.00039 4.2e-05 0.002071 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_3'>
+        <pose frame=''>2.48224 -0.46698 0.009991 7e-06 6e-06 -0.002386</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.48224 -0.46698 0.022491 7e-06 6e-06 -0.002386</pose>
+          <velocity>0 -1e-06 -0.009805 -0.000734 0.005675 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.588 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_4'>
+        <pose frame=''>2.48784 -0.760976 0.01 1.2e-05 -2.7e-05 -0.000177</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.48784 -0.760976 0.0225 1.2e-05 -2.7e-05 -0.000177</pose>
+          <velocity>1e-06 1e-06 0.009102 0.005643 -0.032708 0</velocity>
+          <acceleration>-0.4083 -0.069869 9.10221 -0.640276 -1.29207 0.001057</acceleration>
+          <wrench>-0.024498 -0.004192 0.546132 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_5'>
+        <pose frame=''>0.500771 -0.463804 0.01 1.1e-05 -2.5e-05 0.002291</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.500771 -0.463804 0.0225 1.1e-05 -2.5e-05 0.002291</pose>
+          <velocity>0 0 0.009271 0.007992 -0.03206 0</velocity>
+          <acceleration>-0.4003 -0.099859 9.27058 1.70841 -0.644391 0.000671</acceleration>
+          <wrench>-0.024018 -0.005992 0.556235 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_6'>
+        <pose frame=''>0.511076 -0.775742 0.01 -7e-06 2.1e-05 0.000131</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.511077 -0.775741 0.0225 -7e-06 2.1e-05 0.000131</pose>
+          <velocity>1e-06 0 -0.000567 -0.009541 0.023279 0</velocity>
+          <acceleration>0.291555 0.119292 -0.566805 -0.115992 -1.28813 -3.1415</acceleration>
+          <wrench>0.017493 0.007158 -0.034008 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_7'>
+        <pose frame=''>2.50005 -1.58188 0.150901 -1.57082 0.135304 -0.000157</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.50005 -1.56938 0.1509 -1.57082 0.135304 -0.000157</pose>
+          <velocity>-0.000585 -2.5e-05 -1.9e-05 0.000731 -0.015035 -0.000362</velocity>
+          <acceleration>-0.580213 -0.025126 -0.009479 0.721628 0.222616 -0.07074</acceleration>
+          <wrench>-0.034813 -0.001508 -0.000569 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_8'>
+        <pose frame=''>2.30005 -1.58201 0.150901 -1.57082 -0.126574 -0.00015</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.30005 -1.56951 0.1509 -1.57082 -0.126574 -0.00015</pose>
+          <velocity>-0.000592 -2.7e-05 2.2e-05 0.00077 -0.015015 -0.000358</velocity>
+          <acceleration>-0.587101 -0.026672 0.031462 0.760448 0.324987 -0.069922</acceleration>
+          <wrench>-0.035226 -0.0016 0.001888 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom1_9'>
+        <pose frame=''>2.10008 -1.58385 0.1509 -1.57081 0.137694 -9e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.10008 -1.57135 0.1509 -1.57081 0.137694 -9e-05</pose>
+          <velocity>-0.000585 -4.6e-05 4e-05 0.001278 -0.01469 -0.000376</velocity>
+          <acceleration>-0.580078 -0.045879 0.056047 -1.86829 1.19313 3.06728</acceleration>
+          <wrench>-0.034805 -0.002753 0.003363 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom2'>
+        <pose frame=''>0.907861 -1.0508 0.01 4e-06 -1e-06 4.1e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.907861 -1.0508 0.0225 4e-06 -1e-06 4.1e-05</pose>
+          <velocity>1e-06 0 0.007747 -0.012256 0.047933 1e-06</velocity>
+          <acceleration>0.40644 0.142241 17.9595 0.722706 1.09541 -0.138522</acceleration>
+          <wrench>0.048773 0.017069 2.15514 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom2_0'>
+        <pose frame=''>1.9265 -1.06087 0.009992 -6e-06 3.5e-05 0.003952</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.9265 -1.06087 0.022492 -6e-06 3.5e-05 0.003952</pose>
+          <velocity>-1e-06 0 -0.009146 -0.004294 0.017363 -1.6e-05</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -1.176 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom2_1'>
+        <pose frame=''>2.48376 -1.06227 0.01 -3e-06 -9e-06 0.00134</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.48376 -1.06227 0.0225 -3e-06 -9e-06 0.00134</pose>
+          <velocity>1e-06 2e-06 0.000357 -0.003819 -0.001223 4.5e-05</velocity>
+          <acceleration>0.076921 -0.032295 -9.03786 2.82631 -0.265321 0.048792</acceleration>
+          <wrench>0.00923 -0.003875 -1.08454 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom2_2'>
+        <pose frame=''>0.512122 -1.07071 0.010004 5.8e-05 -7.3e-05 0.000765</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.512121 -1.07071 0.022504 5.8e-05 -7.3e-05 0.000765</pose>
+          <velocity>1e-06 -1e-06 -0.000384 -0.008168 0.007057 -2.3e-05</velocity>
+          <acceleration>0.337047 0.345438 -5.38745 0.614481 1.43554 3.12181</acceleration>
+          <wrench>0.040446 0.041453 -0.646494 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom2_3'>
+        <pose frame=''>2.4001 -1.58424 0.15089 -1.57083 -0.121819 -0.00017</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.4001 -1.57174 0.15089 -1.57083 -0.121819 -0.00017</pose>
+          <velocity>-0.000795 -2e-05 -0.009684 0.000615 -0.019527 -0.000933</velocity>
+          <acceleration>0 0 -9.8 -2.9e-05 -0 -1.9e-05</acceleration>
+          <wrench>0 0 -1.176 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom2_4'>
+        <pose frame=''>1.99999 -1.58138 0.150951 -1.5708 -0.057203 2e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.99999 -1.56888 0.150951 -1.5708 -0.057203 2e-06</pose>
+          <velocity>-4e-06 1e-06 1.3e-05 6e-06 7e-06 -4.5e-05</velocity>
+          <acceleration>-0.00304 0.000896 0.013043 0.005896 0.035448 -0.00909</acceleration>
+          <wrench>-0.000365 0.000108 0.001565 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom2_5'>
+        <pose frame=''>0.600154 -1.58404 0.150896 -1.5708 -0.117735 4e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.600154 -1.57154 0.150896 -1.5708 -0.117735 4e-06</pose>
+          <velocity>0.000773 -3.7e-05 0.006577 0.002344 0.054525 -0.020386</velocity>
+          <acceleration>-0.654475 -0.21319 13.8098 -2.39621 -0.983992 -0.930909</acceleration>
+          <wrench>-0.078537 -0.025583 1.65718 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom2_6'>
+        <pose frame=''>1.00004 -1.58083 0.150901 -1.57083 -0.65122 -0.000121</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.00004 -1.56834 0.1509 -1.57083 -0.65122 -0.000121</pose>
+          <velocity>-0.00082 -5e-06 8.3e-05 0.000203 -0.020597 -0.000571</velocity>
+          <acceleration>-0.812951 -0.004682 0.085823 -2.95018 -0.689884 3.02944</acceleration>
+          <wrench>-0.097554 -0.000562 0.010299 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom3'>
+        <pose frame=''>0.999714 -0.94896 0.010001 1e-06 2.9e-05 -0.002305</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.999714 -0.94896 0.022501 1e-06 2.9e-05 -0.002305</pose>
+          <velocity>1e-06 -1e-06 0.002311 -0.005851 -0.017495 3.1e-05</velocity>
+          <acceleration>-1.55511 -0.081042 6.07775 1.61765 1.18233 0.431398</acceleration>
+          <wrench>-0.264368 -0.013777 1.03322 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom3_0'>
+        <pose frame=''>2.05045 -1.04281 0.010003 1.1e-05 -8.3e-05 0.002983</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.05045 -1.04281 0.022503 1.1e-05 -8.3e-05 0.002983</pose>
+          <velocity>1e-06 -1.5e-05 0.003272 -0.010523 -0.0379 -0.000268</velocity>
+          <acceleration>0.733552 0.404753 -4.28259 1.05323 1.10047 2.88402</acceleration>
+          <wrench>0.124704 0.068808 -0.728041 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom3_1'>
+        <pose frame=''>1.28978 0.008894 0.209359 1.57053 0.02697 -0.012401</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.28963 -0.003605 0.209362 1.57053 0.02697 -0.012401</pose>
+          <velocity>0.014312 0.00736 -0.001428 -0.278 0.046388 -0.41273</velocity>
+          <acceleration>2.76092 2.146 10.2152 -0.52626 0.866481 -1.89506</acceleration>
+          <wrench>0.469357 0.364819 1.73659 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom3_2'>
+        <pose frame=''>1.70967 0.008842 0.209301 1.56717 0.024431 -0.020646</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.70942 -0.003655 0.209346 1.56717 0.024431 -0.020646</pose>
+          <velocity>0.005823 -0.000673 -0.011675 0.007931 0.067808 -0.05546</velocity>
+          <acceleration>0 0 -9.8 0.00602 -0.00012 0.000713</acceleration>
+          <wrench>0 0 -1.666 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom3_3'>
+        <pose frame=''>2.20015 -1.58169 0.150889 -1.57078 -0.118001 8e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.20015 -1.56919 0.150889 -1.57078 -0.118001 8e-06</pose>
+          <velocity>0.001955 -0.000464 -0.007624 0.011713 0.040982 -0.004236</velocity>
+          <acceleration>0 0 -9.8 0.000278 -0 0.000768</acceleration>
+          <wrench>0 0 -1.666 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='atom3_4'>
+        <pose frame=''>0.800013 -1.58277 0.150952 -1.57079 -0.19875 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.800013 -1.57027 0.150952 -1.57079 -0.19875 0</pose>
+          <velocity>0.002945 -0.000288 0.007762 0.008043 0.016185 -0.000779</velocity>
+          <acceleration>4.32931 -0.281728 16.7252 -2.52608 1.39112 0.509955</acceleration>
+          <wrench>0.735983 -0.047894 2.84329 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='eurobot2019'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='base_link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.000826 0.000805 8.9e-05 2.8e-05 8.9e-05 0.000637</acceleration>
+          <wrench>0.179296 0.174902 0.019424 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+      <light name='user_directional_light_0'>
+        <pose frame=''>0.430567 1.39142 1 0 -0 0</pose>
+      </light>
+      <light name='user_point_light_0'>
+        <pose frame=''>1.47415 -0.781974 1 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>1.36978 -3.29526 2.43046 0 0.757798 1.5594</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

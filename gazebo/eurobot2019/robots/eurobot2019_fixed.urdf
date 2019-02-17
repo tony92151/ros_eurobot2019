@@ -7,7 +7,7 @@
         xyz="1.5 -0.97131 0.064683"
         rpy="0 0 0" />
       <mass
-        value="217.15" />
+        value="1000" />
       <inertia
         ixx="117.72"
         ixy="0.001115"
@@ -44,8 +44,9 @@
    <!-- Used for fixing robot to Gazebo 'base_link' -->
   <link name="world"/>
 
-  <joint name="world_fixed" type="fixed">
+  <joint name="fixed" type="fixed">
     <parent link="world"/>
     <child link="base_link"/>
   </joint>
+
 </robot>

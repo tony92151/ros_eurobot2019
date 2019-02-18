@@ -10,7 +10,7 @@ http://www.eurobot.org/eurobot/eurobot-2019
 <img src="https://github.com/tony92151/ros_eurobot2019/blob/master/image/gazebo2.gif"/>
 
 
-## Starup seeting
+## Starup setting
 
 > cd ~/catkin_ws/src
 

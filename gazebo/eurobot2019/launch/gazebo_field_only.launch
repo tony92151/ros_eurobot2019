@@ -7,12 +7,26 @@
     args="0 0 0 0 0 0 base_link base_footprint 40" />
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
+<<<<<<< Updated upstream
     <arg name="world_name" value="$(find eurobot2019)/worlds/eurobot2019_field_done.world"/>
+=======
+<<<<<<< Updated upstream
+    <arg name="world_name" value="$(find eurobot2019)/worlds/eurobot2019_field_done3.world"/>
+=======
+    <arg name="world_name" value="$(find eurobot2019)/worlds/eurobot2019_field_done.world"/>
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
+<<<<<<< Updated upstream
+=======
+>>>>>>> master
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   </include>
 
 

@@ -122,13 +122,13 @@
   </library_lights>
   <library_images>
     <image id="_2019_1_png" name="_2019_1_png">
-      <init_from>_2019_1.png</init_from>
+      <init_from>base_link1/_2019_1.png</init_from>
     </image>
     <image id="_2019_2_png" name="_2019_2_png">
-      <init_from>_2019_2.png</init_from>
+      <init_from>base_link1/_2019_2.png</init_from>
     </image>
     <image id="_2019_3_png" name="_2019_3_png">
-      <init_from>_2019_3.png</init_from>
+      <init_from>base_link1/_2019_3.png</init_from>
     </image>
   </library_images>
   <library_effects>

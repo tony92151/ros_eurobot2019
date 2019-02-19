@@ -99,8 +99,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <scale>1 1 1</scale>
-              <uri>/home/parallels/catkin_ws/src/ros_eurobot2019/gazebo/eurobot2019/meshes/base_link1.dae</uri>
+              <uri>model://eurobot2019_field/meshes/base_link1.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -121,8 +120,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <scale>1 1 1</scale>
-              <uri>/home/parallels/catkin_ws/src/ros_eurobot2019/gazebo/eurobot2019/meshes/base_link1.dae</uri>
+              <uri>model://eurobot2019_field/meshes/base_link1.dae</uri>
             </mesh>
           </geometry>
         </visual>

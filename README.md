@@ -38,7 +38,7 @@ launch field with atoms
    1. depth to laser： 
     http://wiki.ros.org/depthimage_to_laserscan
     因為場地圍牆高度較低，若只取一直線之深度會有超出範圍之危險；必須計算高度後，取某一高度之深度值當圍牆
-    (ground_plane_estimation)[https://github.com/strands-project/strands_perception_people/tree/kinetic-devel/ground_plane_estimation]
+    [ground_plane_estimation](https://github.com/strands-project/strands_perception_people/tree/kinetic-devel/ground_plane_estimation)
     
    2. rtabmap：
    使用depth camera做mapping & navigation
